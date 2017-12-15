@@ -5,7 +5,7 @@ const List = props => {
   let myList = list.map(item => {
     return <li>{item}</li>;
   });
-  return <ul>{myList}</ul>;
+  return <ol className="listStyle">{myList}</ol>;
 };
 
 export default List;

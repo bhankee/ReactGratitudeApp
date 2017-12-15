@@ -22,13 +22,20 @@ class Grateful extends Component {
     this.setState({ text: e.target.value });
     console.log(this.state.text);
   };
+  handleReset = e => {
+    this.setState({ list: [] });
+  };
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="formStyle">
+        <button onClick={this.handleReset} className="reset">
+          Reset
+        </button>
+        <form onSubmit={this.handleSubmit} className="formSet">
           <input onChange={this.handleChange} value={this.state.text} />
           <button>Add</button>
         </form>
+
         <List listItems={this.state.list} />
       </div>
     );
